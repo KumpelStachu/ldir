@@ -34,7 +34,6 @@ typedef struct Options
   int dirfd;
   char *name;
   char *path;
-  char format[96];
   uint32_t total;
   struct max
   {
@@ -452,7 +451,7 @@ int main(int argc, char **argv)
 
   options.max.size += options.flags.human;
 
-  if (options.flags.long_format)
+  if (options.flags.long_format && !options.flags.directories)
   {
     printf("total %d\n", options.total);
   }
